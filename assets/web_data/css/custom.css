@@ -1,0 +1,46 @@
+.body{
+	font-family: 'Open Sans', sans-serif;
+}
+
+.course-info{
+	display:none;
+}
+
+.tp-bullets{
+	top:130%!important;
+}
+
+.pull-left{
+	margin-left:10px;
+}
+
+.pull-right{
+	margin-right:10px;
+}
+
+.first-top-bar-hr{
+	margin-bottom:5px;
+	width:80%;
+}
+
+.second-top-bar-hr{
+	margin-bottom:10px;
+	margin-top:0;
+}
+
+.upb_row_bg{
+	background-color:white!important;
+}
+
+.admin{
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+
+.toggle{
+	margin: 10px;
+}
+
+.odd{
+	background: aliceblue;
+}
