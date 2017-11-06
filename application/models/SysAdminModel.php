@@ -22,5 +22,18 @@ class SysadminModel extends CI_Model
         return $result;
     }
 
+    public function add_lang($name,$acronym){
+        $data = [
+            'lang_name' => $name,
+            'lang_acronym' => $acronym
+        ];
+        if($this->db->insert('language',$data)){
+
+            return true;
+        }else{
+
+            return false;
+        }
+    }
 
 }

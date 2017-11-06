@@ -84,7 +84,7 @@
                         <a class="title" href="<?php echo base_url().'index.php/AdminCP'?>"><?php echo $this->session->username ?></a>
                     </li>
                     <li>
-                        <a class="title" href="<?php echo base_url().'index.php/logout'?>">Đăng xuất</a>
+                        <a class="title" href="<?php echo base_url().'index.php/logout'?>"><?= $this->lang->line('Log out');?></a>
                     </li>
                     <?php else: ?>
                     <li>

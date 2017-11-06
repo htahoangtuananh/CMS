@@ -6,7 +6,6 @@
  * Time: 3:03 PM
  */
 ?>
-<div class="content-wrapper" style="min-height: 960.3px;">
     <section class="content-header">
         <h1>Thêm mục mới</h1>
     </section>

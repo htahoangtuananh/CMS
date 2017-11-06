@@ -15,10 +15,10 @@ class LanguageLoader
         $ci =& get_instance();
         $ci->load->helper('language');
         $siteLang = $ci->session->userdata('site_lang');
-        if ($siteLang) {
+        if ($siteLang != 'eng') {
             $ci->lang->load('message',$siteLang);
         } else {
-            $ci->lang->load('message','vietnamese');
+            $ci->lang->load('message','english');
         }
     }
 }

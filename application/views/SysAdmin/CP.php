@@ -7,7 +7,7 @@
  */
 ?>
 <ul class="sidebar-menu tree" data-widget="tree">
-    <li class="header">DÀNH CHO ADMIN</li>
+    <li class="header"><?= $this->lang->line('ADMIN SECTION'); ?></li>
     <li class="treeview">
         <a href="#"><i class="fa fa-calendar fa-fw"></i>
             <span> Quản lý lớp học</span>
@@ -20,25 +20,26 @@
             <li><a href=""> Link lớp học</a></li>
         </ul>
     </li>
-    <li class="header">DÀNH CHO SYSADMIN</li>
+    <li class="header"><?= $this->lang->line('SYSADMIN SECTION'); ?></li>
     <li class="treeview">
         <a href="#"><i class="fa fa-wrench"></i>
-            <span> Quản lý hệ thống</span>
+            <span><?= $this->lang->line('Manage System'); ?></span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
             </span>
         </a>
         <ul class="treeview-menu" style="display: block;">
-            <li><a href="<?= base_url().'SysAdmin/manageField' ;?>"> Quản lý các đề mục</a></li>
-            <li><a href=""> Quản lý danh sách Admin</a></li>
-            <li><a href="<?= base_url().'SysAdmin/addLang' ;?>"> Ngôn ngữ</a></li>
+            <li><a href="<?= base_url().'SysAdmin/manageBranch' ;?>"><?= $this->lang->line('Manage Branch'); ?></a></li>
+            <li><a href=""><?= $this->lang->line('Manage Admin'); ?></a></li>
+            <li><a href="<?= base_url().'SysAdmin/addLang' ;?>"><?= $this->lang->line('Language'); ?></a></li>
         </ul>
     </li>
 </ul>
 </section>
 </aside>
+<div class="content-wrapper" style="min-height: 960.3px;">
 <?php if(isset($this->session->message)):?>
-    <div class="row">
-        <h4 class="col-md-offset-3 col-md-6 " style="color:red"><?php echo $this->session->message?></h4>
+    <div class="alert alert-success">
+        <i class="fa fa-check fa-fw"></i> <?php echo $this->session->message?>
     </div>
 <?php endif;?>

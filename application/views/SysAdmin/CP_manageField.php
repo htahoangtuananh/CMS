@@ -7,13 +7,13 @@
  */
 
 ?>
-<div class="content-wrapper" style="min-height: 960.3px;">
+
     <section class="content-header">
         <h1>Quản lý mục</h1>
     </section>
     <section class="content">
         <div class="form-group">
-            <a href="<?= base_url().'SysAdmin/addField/' ?>" class ='btn btn-primary'>
+            <a href="<?= base_url().'SysAdmin/addBranch/' ?>" class ='btn btn-primary'>
                 <i class="fa fa-plus"></i> Thêm mục mới
             </a>
         </div>
