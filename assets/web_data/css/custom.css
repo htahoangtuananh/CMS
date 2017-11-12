@@ -37,10 +37,10 @@
 	margin-bottom: 100px;
 }
 
-.toggle{
-	margin: 10px;
-}
-
 .odd{
 	background: aliceblue;
+}
+
+td{
+	padding: 10px!important;
 }

@@ -5,6 +5,7 @@
 			  				<div class="panel-heading panel-default">
                                 <h4 class="para-title"><strong>Thêm admin</strong></h4>
 					        </div>
+
 			  				<div class="panel-body form-horizontal">
 							<?php echo validation_errors(); ?>
 								<?php echo form_open('Admin/createAdmin'); ?>
@@ -31,7 +32,7 @@
 										  <button type="submit" class="btn btn-primary">Cập nhật</button>
 										</div>
 									</div>
-							</div>
+							    </div>
 			  			</div>
 			  		</div>
 	  			</div>

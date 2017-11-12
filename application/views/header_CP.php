@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Quản lý nội dung</title>
+    <title><?= $this->lang->line('Content Management System');?></title>
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url().'assets/web_data/wp-content/uploads/2015/10/fav.png'?>">
     <meta name="keywords" content=""/>
     <meta name="language" content="vi"/>
@@ -88,7 +88,7 @@
                     </li>
                     <?php else: ?>
                     <li>
-                        <a class="title"> Bạn chưa đăng nhập</a>
+                        <a class="title"><?= $this->lang->line('Havent logged in yet');?></a>
                     </li>
                 <?php endif;?>
                     </ul>

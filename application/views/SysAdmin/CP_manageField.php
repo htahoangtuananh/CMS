@@ -7,14 +7,13 @@
  */
 
 ?>
-
     <section class="content-header">
-        <h1>Quản lý mục</h1>
+        <h1><?= $this->lang->line('Manage Branch'); ?></h1>
     </section>
     <section class="content">
         <div class="form-group">
             <a href="<?= base_url().'SysAdmin/addBranch/' ?>" class ='btn btn-primary'>
-                <i class="fa fa-plus"></i> Thêm mục mới
+                <i class="fa fa-plus"></i> <?= $this->lang->line('Add new branch'); ?>
             </a>
         </div>
         <div class="box box-default">
@@ -23,51 +22,21 @@
                 <table id="dataTable" class="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
-                        <th>Tên đề mục</th>
-                        <th>Mục cha</th>
-                        <th>Đường link</th>
-                        <th>Bật</th>
+                        <th><?= $this->lang->line('Branch name'); ?></th>
+                        <th><?= $this->lang->line('Node name'); ?></th>
+                        <th><?= $this->lang->line('Language'); ?></th>
+                        <th><?= $this->lang->line('Enable'); ?></th>
                     </tr>
                     </thead>
                     <tfoot>
                     <tr>
-                        <th>Tên đề mục</th>
-                        <th>Mục cha</th>
-                        <th>Đường link</th>
-                        <th>Bật</th>
+                        <th><?= $this->lang->line('Branch name'); ?></th>
+                        <th><?= $this->lang->line('Node name'); ?></th>
+                        <th><?= $this->lang->line('Language'); ?></th>
+                        <th><?= $this->lang->line('Enable'); ?></th>
                     </tr>
                     </tfoot>
                     <tbody>
-                        <tr>
-                            <td>asfas</td>
-                            <td>asdasda</td>
-                            <td>asdasdad</td>
-                            <td><input class="toggle" checked data-toggle="toggle" type="checkbox"></td>
-                        </tr>
-                        <tr>
-                            <td>asfas</td>
-                            <td>asdasda</td>
-                            <td>asdasdad</td>
-                            <td><input class="toggle" checked data-toggle="toggle" type="checkbox"></td>
-                        </tr>
-                        <tr>
-                            <td>asfas</td>
-                            <td>asdasda</td>
-                            <td>asdasdad</td>
-                            <td><input class="toggle" checked data-toggle="toggle" type="checkbox"></td>
-                        </tr>
-                        <tr>
-                            <td>asfas</td>
-                            <td>asdasda</td>
-                            <td>asdasdad</td>
-                            <td><input class="toggle" checked data-toggle="toggle" type="checkbox"></td>
-                        </tr>
-                        <tr>
-                            <td>asfas</td>
-                            <td>asdasda</td>
-                            <td>asdasdad</td>
-                            <td><input class="toggle" checked data-toggle="toggle" type="checkbox"></td>
-                        </tr>
 
                     </tbody>
                 </table>

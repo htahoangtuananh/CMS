@@ -73,6 +73,7 @@ class Authentication extends CI_Controller
         $username = $post['username'];
         $pass = $post['password'];
         $bool=$this->authenticationModel->validate_admin($username,$pass);
+        var_dump($bool['message']);
         if(isset($bool)){
             $session_data = array(
                 'id' => $bool['admin_id'],
@@ -86,7 +87,7 @@ class Authentication extends CI_Controller
             $this->session->set_flashdata('success','login success');
         }
 
-        redirect('Admin');
+        redirect('SysAdmin');
     }
 
     public function login_user()

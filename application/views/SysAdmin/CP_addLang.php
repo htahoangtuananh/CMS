@@ -16,7 +16,7 @@
                     <div class="box box-primary">
                         <div class="box-body">
                             <?php echo validation_errors(); ?>
-                            <?php echo form_open('SysAdmin/addLang'); ?>
+                            <?php echo form_open('SysAdmin/addAdmin'); ?>
                             <div class="form-group">
                                 <label for="branch_name" class="text-align-left control-label"><?= $this->lang->line('Language name'); ?></label>
                                 <input type="text" name="lang_name" class="form-control number-field">

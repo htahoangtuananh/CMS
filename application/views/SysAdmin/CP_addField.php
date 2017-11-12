@@ -7,7 +7,7 @@
  */
 ?>
     <section class="content-header">
-        <h1>Thêm mục mới</h1>
+        <h1><?= $this->lang->line('Add new branch')?></h1>
     </section>
     <section class="content">
     <div class="col-md-9">
@@ -18,11 +18,25 @@
                         <?php echo validation_errors(); ?>
                         <?php echo form_open('SysAdmin/addBranch'); ?>
                         <div class="form-group">
-                            <label for="branch_name" class="text-align-left control-label">Tên mục</label>
+                            <label for="branch_name" class="text-align-left control-label"><?= $this->lang->line('Branch name')?></label>
                                 <input type="text" name="branch_name" class="form-control number-field">
                         </div>
                         <div class="form-group">
-                            <label for="node_id" class="text-align-left control-label">Thư mục cha</label>
+                            <label for="branch_name" class="text-align-left control-label"><?= $this->lang->line('Branch link')?></label>
+                            <input type="text" name="branch_name" class="form-control number-field">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lang" class="text-align-left control-label"><?= $this->lang->line('Language')?></label>
+                                <select class="form-control" id="lang">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="node_id" class="text-align-left control-label"><?= $this->lang->line('Node name')?></label>
                             <select class="form-control" id="node_id">
                                 <option>1</option>
                                 <option>2</option>
@@ -30,20 +44,12 @@
                                 <option>4</option>
                             </select>
                         </div>
+
                         <div class="form-group">
-                            <label for="lang" class="text-align-left control-label">Ngôn ngữ</label>
-                            <select class="form-control" id="lang">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                            </select>
+                            <a data-toggle="modal" data-target="#addNode"><i class="fa fa-plus"></i> <?= $this->lang->line('Add new node')?></a>
                         </div>
                         <div class="form-group">
-                            <a data-toggle="modal" data-target="#addNode"><i class="fa fa-plus"></i> Thêm thư mục cha</a>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Cập nhật</button>
+                            <button type="submit" class="btn btn-primary"><?= $this->lang->line('Update')?></button>
                         </div>
                         <?php echo form_close(); ?>
                     </div>
@@ -60,17 +66,17 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Thêm thư mục cha</h4>
+                <h4 class="modal-title"><?= $this->lang->line('Add new node')?></h4>
             </div>
             <div class="modal-body">
                 <?php echo validation_errors(); ?>
                 <?php echo form_open('SysAdmin/addNode'); ?>
                 <div class="form-group">
-                    <label for="label" class="text-align-left control-label">Tên mục</label>
+                    <label for="label" class="text-align-left control-label"><?= $this->lang->line('Node name')?></label>
                     <input type="text" name="node_name" class="form-control number-field">
                 </div>
                 <div class="form-group">
-                    <label for="lang" class="text-align-left control-label">Ngôn ngữ</label>
+                    <label for="lang" class="text-align-left control-label"><?= $this->lang->line('Language')?></label>
                     <select class="form-control" id="lang">
                         <option>1</option>
                         <option>2</option>
