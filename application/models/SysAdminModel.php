@@ -6,7 +6,7 @@
  * Time: 10:09 AM
  */
 
-class SysadminModel extends CI_Model
+class SysAdminModel extends CI_Model
 {
 
     public function __construct()
@@ -30,6 +30,7 @@ class SysadminModel extends CI_Model
         $this->db->set($data)->where($table_id,$id)->update($table);
         return $this->db->insert_id();
     }
+
 //LANGUAGE
 
     public function get_lang($id){
@@ -97,17 +98,93 @@ class SysadminModel extends CI_Model
 
 //BRANCH
 
+    public function get_branch($id){
+        $query = $this->db->select('*')
+            ->from('branch')
+            ->where('branch_id',$id)
+            ->get()
+            ->row_array();
 
+        return $query;
+    }
 
+    public function get_branch_list($lang){
+        $query = $this->db->select('*')
+            ->from('branch')
+            ->where('branch.lang',$lang)
+            ->get()
+            ->result_array();
 
+        return $query;
+    }
 
+    public function add_branch($name,$lang_acronym,$icon){
+        $data = [
+            'branch_name' => $name,
+            'lang' => $lang_acronym,
+            'icon' => $icon
+        ];
+        if($this->db->insert('branch',$data)){
 
+            return true;
+        }else{
 
+            return false;
+        }
+    }
 
+    public function update_branch($id,$name,$lang_acronym,$icon){
+        $data = [
+            'branch_name' => $name,
+            'lang' => $lang_acronym,
+            'icon' => $icon
+        ];
+        if($this->db->set($data)->where('branch_id',$id)->update('branch')){
 
+            return true;
+        }else{
 
-
-
+            return false;
+        }
+    }
 
 //NODE
+
+    public function get_node_list($lang){
+        $query = $this->db->select('*')
+            ->from('node')
+            ->where('node.lang',$lang)
+            ->join('branch','branch.branch_id = node.branch_id' )
+            ->get()
+            ->result_array();
+
+        return $query;
+    }
+
+    public function get_enable_node_list($lang){
+        $query = $this->db->select('*')
+            ->from('node')
+            ->where('node.lang',$lang)
+            ->where('node.is_enable',1)
+            ->get()
+            ->result_array();
+
+        return $query;
+    }
+
+    public function add_node($name,$link,$branch_id,$lang_acronym){
+        $data = [
+            'node_name' => $name,
+            'node_link' => $link,
+            'branch_id' => $branch_id,
+            'lang' => $lang_acronym,
+        ];
+        if($this->db->insert('node',$data)){
+
+            return true;
+        }else{
+
+            return false;
+        }
+    }
 }

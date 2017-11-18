@@ -17,11 +17,13 @@ $lang['Detail lang'] = 'Language\'s detail';
 $lang['Translate'] = 'Translate';
 
 
-//Node SECTION
+//NODE SECTION
 $lang['Node']= 'Node';
 $lang['Add new node'] = 'Add new node';
 $lang['Node name'] = 'Node\'s Name';
 $lang['Node language'] = 'Node\'s Language';
+$lang['Node link'] = 'Node\'s Link';
+$lang['Successfully add new node'] = 'Successfully add new node';
 
 
 //Branch SECTION
@@ -29,12 +31,14 @@ $lang['Branch']= 'Branch';
 $lang['Add new branch'] = 'Add new branch';
 $lang['Branch name'] = 'Branch\'s Name';
 $lang['Branch language'] = 'Branch\'s Language';
-$lang['Branch link'] = 'Branch\'s Link';
+$lang['Branch icon'] = 'Branch\'s Icon';
+$lang['Successfully add new branch'] = 'Successfully add new branch';
 
 
 //LAYOUT SECTION
 $lang['Manage Admin']= 'Manage Admin';
 $lang['Manage Branch']= 'Manage Branch';
+$lang['Manage Node']= 'Manage Node';
 $lang['SYSADMIN SECTION']= 'SYSADMIN SECTION';
 $lang['ADMIN SECTION']= 'ADMIN SECTION';
 $lang['Manage System']= 'Manage System';
@@ -59,4 +63,9 @@ $lang['Email']= 'Email';
 $lang['Is Sysadmin']= 'Is Sysadmin';
 $lang['Admin name']= 'Admin\'s name';
 $lang['Add new admin']= 'Add new admin';
+$lang['Successfully add new admin'] = 'Successfully add new admin';
+
+
+//MESSAGE
+$lang['Error input please check your input before submitting'] = 'Error input please check your input before submitting';
 $lang['Successfully add new admin'] = 'Successfully add new admin';

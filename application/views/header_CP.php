@@ -99,10 +99,6 @@
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar" style="height: auto;">
 
-        <?php if($this->session->is_sysAdmin == 0):?>
-        </section>
-    </aside>
-    <?php endif;?>
 
 
 

@@ -81,7 +81,7 @@ class Authentication extends CI_Controller
                 'role'=>$bool['role'],
                 'admin_logged_in'=>TRUE,
                 'is_sysAdmin' => $bool['is_sysAdmin'],
-                'site_lang' => $bool['prefer_lang']
+                'site_lang' => empty($bool['prefer_lang'])? 'eng' : $bool['prefer_lang']
             );
             $this->session->set_userdata($session_data);
             $this->session->set_flashdata('success','login success');

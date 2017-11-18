@@ -6,7 +6,6 @@
  * Time: 10:30 AM
  */
 $lang_array = array_values($lang);
-var_dump($lang_array);
 ?>
 <section class="content-header">
     <h1><?= $language['lang_name'] ; ?> : <?= $language['lang_acronym'] ; ?></h1>
@@ -36,7 +35,7 @@ var_dump($lang_array);
                     <tr>
                         <td><?= $langs?></td>
 
-                        <td><input type="text" name="<?= $key ?>"></td>
+                        <td><input type="text" name="<?= $key ?>" value="<?= $langs ;?>"></td>
                     </tr>
                     <?php endforeach;?>
                 </tbody>
@@ -51,9 +50,10 @@ var_dump($lang_array);
     var oTable;
 
     $(document).ready(function() {
-        $("#submit-button").click(function(e) {
+        $("#submit-button").click(function() {
             var sData = oTable.$('input').serialize();
             $("form").submit( function() {
+
                 $('<input />').attr('type', 'hidden')
                     .attr('name', "translate")
                     .attr('value', sData)

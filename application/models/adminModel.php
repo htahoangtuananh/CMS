@@ -25,5 +25,25 @@ class adminModel extends CI_Model
         $this->db->insert('admin',$data);
     }
 
+    public function get_branch_list($lang){
+        $query = $this->db->select('*')
+            ->from('branch')
+            ->where('branch.lang',$lang)
+            ->get()
+            ->result_array();
+
+        return $query;
+    }
+
+    public function get_enable_node_list($lang){
+        $query = $this->db->select('*')
+            ->from('node')
+            ->where('node.lang',$lang)
+            ->where('node.is_enable',1)
+            ->get()
+            ->result_array();
+
+        return $query;
+    }
 
 }

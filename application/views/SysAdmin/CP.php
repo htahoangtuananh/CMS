@@ -8,18 +8,23 @@
 ?>
 <ul class="sidebar-menu tree" data-widget="tree">
     <li class="header"><?= $this->lang->line('ADMIN SECTION'); ?></li>
+    <?php foreach ($branch as $key => $branchs): ?>
     <li class="treeview">
-        <a href="#"><i class="fa fa-calendar fa-fw"></i>
-            <span> Quản lý lớp học</span>
+        <a href="#"><i class="fa fa-<?= $branchs['icon']?> fa-fw"> </i>
+            <span><?= $branchs['branch_name']?></span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
             </span>
         </a>
         <ul class="treeview-menu" style="display: block;">
-            <li><a href=""> Lớp học hiện tại</a></li>
-            <li><a href=""> Link lớp học</a></li>
+            <?php foreach($node as $nodes):?>
+                <?php if($nodes['branch_id'] == $branchs['branch_id']):?>
+                    <li><a href="<?= base_url().'Admin/'.$nodes['node_link'] ?>"><?= $nodes['node_name']?></a></li>
+                <?php endif;?>
+            <?php endforeach; ?>
         </ul>
     </li>
+    <?php endforeach;?>
     <li class="header"><?= $this->lang->line('SYSADMIN SECTION'); ?></li>
     <li class="treeview">
         <a href="#"><i class="fa fa-wrench"></i>
@@ -29,6 +34,7 @@
             </span>
         </a>
         <ul class="treeview-menu" style="display: block;">
+            <li><a href="<?= base_url().'SysAdmin/manageNode' ;?>"><?= $this->lang->line('Manage Node'); ?></a></li>
             <li><a href="<?= base_url().'SysAdmin/manageBranch' ;?>"><?= $this->lang->line('Manage Branch'); ?></a></li>
             <li><a href="<?= base_url().'SysAdmin/manageAdmin' ;?>"><?= $this->lang->line('Manage Admin'); ?></a></li>
             <li><a href="<?= base_url().'SysAdmin/manageLang' ;?>"><?= $this->lang->line('Language'); ?></a></li>
