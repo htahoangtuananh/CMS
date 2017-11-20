@@ -69,3 +69,14 @@ $lang['Successfully add new admin'] = 'Successfully add new admin';
 //MESSAGE
 $lang['Error input please check your input before submitting'] = 'Error input please check your input before submitting';
 $lang['Successfully add new admin'] = 'Successfully add new admin';
+
+
+//ADMIN
+
+//CLASS
+$lang['Class name'] = 'Class\'s name';
+$lang['Class link'] = 'Class\'s link';
+$lang['Manage class'] = 'Manage class';
+$lang['Add new class'] = 'Add new class';
+$lang['Class content'] = 'Class\'s content';
+$lang['Class description'] = 'Class\'s description';

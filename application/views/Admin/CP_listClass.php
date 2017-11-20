@@ -7,11 +7,11 @@
  */
 ?>
 <section class="content-header">
-    <h1><?= $this->lang->line('Manage Branch'); ?></h1>
+    <h1><?= $this->lang->line('Manage class'); ?></h1>
 </section>
 <section class="content">
     <div class="form-group">
-        <a class ='btn btn-primary' data-toggle="modal" data-target="#addNode"><i class="fa fa-plus"></i> <?= $this->lang->line('Add new branch')?></a>
+        <a class ='btn btn-primary' data-toggle="modal" data-target="#addClass"><i class="fa fa-plus"></i> <?= $this->lang->line('Add new class')?></a>
     </div>
     <div class="box box-default">
         <div class="box-body">
@@ -20,23 +20,23 @@
                 <thead>
                 <tr>
                     <th><?= $this->lang->line('Class name'); ?></th>
+                    <th><?= $this->lang->line('Class link'); ?></th>
                     <th><?= $this->lang->line('Language'); ?></th>
-                    <th><?= $this->lang->line('Branch icon'); ?></th>
                 </tr>
                 </thead>
                 <tfoot>
                 <tr>
-                    <th><?= $this->lang->line('Branch name'); ?></th>
+                    <th><?= $this->lang->line('Class name'); ?></th>
+                    <th><?= $this->lang->line('Class link'); ?></th>
                     <th><?= $this->lang->line('Language'); ?></th>
-                    <th><?= $this->lang->line('Branch icon'); ?></th>
                 </tr>
                 </tfoot>
                 <tbody>
-                <?php foreach($branch as $branchs): ?>
+                <?php foreach($class as $classes): ?>
                     <tr>
-                        <td><?= $branchs['branch_name']?></td>
-                        <td><?= $branchs['lang']?></td>
-                        <td><?= $branchs['icon']?></td>
+                        <td><?= $classes['class_name']?></td>
+                        <td><?= $classes['class_link']?></td>
+                        <td><?= $classes['lang']?></td>
                     </tr>
                 <?php endforeach;?>
                 </tbody>
@@ -47,21 +47,33 @@
 </section>
 </div>
 
-<div id="addNode" class="modal fade" role="dialog">
+<div id="addClass" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title"><?= $this->lang->line('Add new branch')?></h4>
+                <h4 class="modal-title"><?= $this->lang->line('Add new class')?></h4>
             </div>
             <div class="modal-body">
                 <?php echo validation_errors(); ?>
-                <?php echo form_open('SysAdmin/addBranch'); ?>
+                <?php echo form_open('Admin/addClass'); ?>
                 <div class="form-group">
-                    <label for="label" class="text-align-left control-label"><?= $this->lang->line('Branch name')?></label>
-                    <input type="text" name="branch_name" class="form-control number-field">
+                    <label for="label" class="text-align-left control-label"><?= $this->lang->line('Class name')?></label>
+                    <input type="text" name="class_name" class="form-control number-field">
+                </div>
+                <div class="form-group">
+                    <label for="label" class="text-align-left control-label"><?= $this->lang->line('Class link')?></label>
+                    <input type="text" name="class_link" class="form-control number-field">
+                </div>
+                <div class="form-group">
+                    <label for="label" class="text-align-left control-label"><?= $this->lang->line('Class content')?></label>
+                    <textarea rows="4" cols="50" name="class_content" class="form-control number-field"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="label" class="text-align-left control-label"><?= $this->lang->line('Class description')?></label>
+                    <textarea rows="4" cols="50" name="class_description" class="form-control number-field"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="lang" class="text-align-left control-label"><?= $this->lang->line('Language')?></label>

@@ -6,6 +6,7 @@
  * Time: 10:30 AM
  */
 $lang_array = array_values($lang);
+$lang_key_array = array_keys($lang);
 ?>
 <section class="content-header">
     <h1><?= $language['lang_name'] ; ?> : <?= $language['lang_acronym'] ; ?></h1>
@@ -33,7 +34,7 @@ $lang_array = array_values($lang);
 
                     <?php foreach ($lang_array as $key => $langs): ?>
                     <tr>
-                        <td><?= $langs?></td>
+                        <td><?= $lang_key_array[$key]?></td>
 
                         <td><input type="text" name="<?= $key ?>" value="<?= $langs ;?>"></td>
                     </tr>

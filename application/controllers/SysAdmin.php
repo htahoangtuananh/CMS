@@ -110,9 +110,17 @@ class SysAdmin extends CI_Controller
 //LANG SECTION
     public function detailLang($lang_id)
     {
-        $this->lang->load('message_lang', $this->session->site_lang);
+
         $data['language'] = $this->SysAdminModel->get_lang($lang_id);
-        $data['lang'] = $this->lang->language;
+        $path = './application/language/'.$data['language']['lang_acronym'];
+        if(!file_exists($path)){
+            $this->lang->load('message_lang', $this->session->site_lang);
+            $data['lang'] = $this->lang->language;
+        }
+        else{
+            $this->lang->load('message_lang', $data['language']['lang_acronym']);
+            $data['lang'] = $this->lang->language;
+        }
 
         if (!$this->input->post())
         {
@@ -130,7 +138,7 @@ class SysAdmin extends CI_Controller
 
                 redirect('detailLang/'.$lang_id);
             }
-            $path = './application/language/'.$data['language']['lang_acronym'];
+
             $translate_array = explode("&", $post['translate']);
             $translate_to_file = array();
             $langstr="<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');

@@ -31,12 +31,27 @@ class Admin extends CI_Controller {
         }
     }
 
-    public function listClass(){
-
-        $dataLayout['branch'] = $this->adminModel->get_branch_list($this->session->site_lang);
-        $dataLayout['node'] = $this->adminModel->get_enable_node_list($this->session->site_lang);
+    public function listClass()
+    {
+        $lang = $this->session->site_lang;
+        $dataLayout['branch'] = $this->adminModel->get_branch_list($lang);
+        $dataLayout['node'] = $this->adminModel->get_enable_node_list($lang);
+        $data['lang'] = $this->adminModel->get_lang_list();
+        $data['class'] = $this->adminModel->get_class_list($lang);
         $this->load->view('header_CP');
         $this->load->view('Admin/CP',$dataLayout);
-        $this->load->view('Admin/CP_listClass');
+        $this->load->view('Admin/CP_listClass', $data);
+    }
+
+    public function addClass()
+    {
+        $lang = $this->session->site_lang;
+        $dataLayout['branch'] = $this->adminModel->get_branch_list($lang);
+        $dataLayout['node'] = $this->adminModel->get_enable_node_list($lang);
+        $data['lang'] = $this->adminModel->get_lang_list();
+        $data['class'] = $this->adminModel->get_class_list($lang);
+        $this->load->view('header_CP');
+        $this->load->view('Admin/CP',$dataLayout);
+        $this->load->view('Admin/CP_listClass', $data);
     }
 }

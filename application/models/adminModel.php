@@ -46,4 +46,22 @@ class adminModel extends CI_Model
         return $query;
     }
 
+    public function get_class_list($lang){
+        $query = $this->db->select('*')
+            ->from('classes')
+            ->where('classes.lang',$lang)
+            ->get()
+            ->result_array();
+
+        return $query;
+    }
+
+    public function get_lang_list(){
+        $query = $this->db->select('*')
+            ->from('language')
+            ->get()
+            ->result_array();
+
+        return $query;
+    }
 }
