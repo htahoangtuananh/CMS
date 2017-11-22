@@ -46,6 +46,7 @@ $lang['Content Management System'] = 'Content Management System';
 $lang['Havent logged in yet'] = 'Haven\'t logged in yet ?';
 $lang['Welcome to Sysadmin control panel'] = 'Welcome to Sysadmin control panel';
 $lang['Select a menu on the left to begin'] = 'Select a menu on the left to begin';
+$lang['Welcome to Admin control panel'] = 'Welcome to Sysadmin control panel';
 
 
 //GLOBAL
@@ -80,3 +81,4 @@ $lang['Manage class'] = 'Manage class';
 $lang['Add new class'] = 'Add new class';
 $lang['Class content'] = 'Class\'s content';
 $lang['Class description'] = 'Class\'s description';
+$lang['Successfully update class'] = 'Successfully update class';

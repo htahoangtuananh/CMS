@@ -220,6 +220,7 @@ class SysAdmin extends CI_Controller
         $dataLayout['branch'] = $this->SysAdminModel->get_branch_list($this->session->site_lang);
         $dataLayout['node'] = $this->SysAdminModel->get_enable_node_list($this->session->site_lang);
         $data['branch'] = $this->SysAdminModel->get_branch_list($this->session->site_lang);
+        $data['lang'] = $this->SysAdminModel->get_lang_list();
         $this->load->view('header_CP');
         $this->load->view('SysAdmin/CP',$dataLayout);
         $this->load->view('SysAdmin/CP_manageBranch',$data);

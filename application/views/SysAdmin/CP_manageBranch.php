@@ -11,7 +11,7 @@
 </section>
 <section class="content">
     <div class="form-group">
-        <a class ='btn btn-primary' data-toggle="modal" data-target="#addNode"><i class="fa fa-plus"></i> <?= $this->lang->line('Add new branch')?></a>
+        <a class ='btn btn-primary' data-toggle="modal" data-target="#addBranch"><i class="fa fa-plus"></i> <?= $this->lang->line('Add new branch')?></a>
     </div>
     <div class="box box-default">
         <div class="box-body">
@@ -47,7 +47,7 @@
 </section>
 </div>
 
-<div id="addNode" class="modal fade" role="dialog">
+<div id="addBranch" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
         <!-- Modal content-->

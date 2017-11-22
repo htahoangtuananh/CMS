@@ -34,7 +34,7 @@
                 <tbody>
                 <?php foreach($class as $classes): ?>
                     <tr>
-                        <td><?= $classes['class_name']?></td>
+                        <td><a href='<?= base_url()."Admin/viewClass/".$classes["class_id"]?>'><?= $classes['class_name']?></a></td>
                         <td><?= $classes['class_link']?></td>
                         <td><?= $classes['lang']?></td>
                     </tr>
@@ -77,15 +77,11 @@
                 </div>
                 <div class="form-group">
                     <label for="lang" class="text-align-left control-label"><?= $this->lang->line('Language')?></label>
-                    <select class="form-control" id="lang" name="lang_id">
+                    <select class="form-control" id="lang" name="lang">
                         <?php foreach($lang as $lang): ?>
                             <option value="<?= $lang['lang_acronym']?>"><?= $lang['lang_name']?></option>
                         <?php endforeach; ?>
                     </select>
-                </div>
-                <div class="form-group">
-                    <label for="node_id" class="text-align-left control-label"><?= $this->lang->line('Branch icon')?></label>
-                    <input type="text" name="icon" class="form-control number-field">
                 </div>
             </div>
             <div class="modal-footer">

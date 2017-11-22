@@ -22,7 +22,13 @@ class adminModel extends CI_Model
             'password' => $password
         ];
 
-        $this->db->insert('admin',$data);
+        if($this->db->insert('admin',$data)){
+
+            return true;
+        }else{
+
+            return false;
+        }
     }
 
     public function get_branch_list($lang){
@@ -46,10 +52,9 @@ class adminModel extends CI_Model
         return $query;
     }
 
-    public function get_class_list($lang){
+    public function get_class_list(){
         $query = $this->db->select('*')
             ->from('classes')
-            ->where('classes.lang',$lang)
             ->get()
             ->result_array();
 
@@ -63,5 +68,49 @@ class adminModel extends CI_Model
             ->result_array();
 
         return $query;
+    }
+
+    public function add_class($class_name, $class_link, $class_content, $class_description, $lang_acronym){
+        $data = [
+            'class_name' => $class_name,
+            'class_link' => $class_link,
+            'class_content' => $class_content,
+            'class_description' => $class_description,
+            'lang' => $lang_acronym
+        ];
+        if($this->db->insert('classes',$data)){
+
+            return true;
+        }else{
+
+            return false;
+        }
+    }
+
+    public function get_class_detail($id){
+        $query = $this->db->select('*')
+            ->from('classes')
+            ->where('class_id',$id)
+            ->get()
+            ->row_array();
+
+        return $query;
+    }
+
+    public function update_class($id,$class_name, $class_link, $class_content, $class_description, $lang_acronym){
+        $data = [
+            'class_name' => $class_name,
+            'class_link' => $class_link,
+            'class_content' => $class_content,
+            'class_description' => $class_description,
+            'lang' => $lang_acronym
+        ];
+        if($this->db->set($data)->where('class_id',$id)->update('classes')){
+
+            return true;
+        }else{
+
+            return false;
+        }
     }
 }

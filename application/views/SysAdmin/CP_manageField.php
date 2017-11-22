@@ -8,7 +8,7 @@
 
 ?>
     <section class="content-header">
-        <h1><?= $this->lang->line('Manage node'); ?></h1>
+        <h1><?= $this->lang->line('Manage Node'); ?></h1>
     </section>
     <section class="content">
         <div class="form-group">
